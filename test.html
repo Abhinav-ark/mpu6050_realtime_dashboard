@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Test Page</title>
+    <script>
+        // Establish WebSocket connection
+        var websocket2 = new WebSocket('ws://localhost:5000/sendSensorData');
+
+        // Connection established
+        websocket2.onopen = function(event) {
+            console.log('Connection established');
+        };
+
+        // Handle incoming messages
+        websocket2.onmessage = function(event) {
+            console.log('Received: ' + event.data);
+        };
+
+        // Handle errors
+        websocket2.onerror = function(event) {
+            console.error("WebSocket error observed:", event);
+        };
+
+        // Function to send data to the server
+        function sendData() {
+            const sensorValue = document.getElementById('sensorValue').value;
+            websocket2.send(JSON.stringify({value: sensorValue}));
+        }
+    </script>
+</head>
+<body>
+    <h2>Test WebSocket </h2>
+    <input id="sensorValue" type="text" placeholder="Enter sensor data here">
+    <button onClick="sendData()">Send Data</button>
+</body>
+</html>
