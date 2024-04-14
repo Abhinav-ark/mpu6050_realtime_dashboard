@@ -6,6 +6,10 @@
 .pnp.js
 .yarn/install-state.gz
 
+# environmental variables
+.env
+.env.local
+
 # testing
 /coverage
 
@@ -19,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+/src/app/table.js
 
 # debug
 npm-debug.log*

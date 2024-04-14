@@ -1,6 +1,7 @@
 const { createServer } = require("http");
 const { parse } = require("url");
 const WebSocketServer = require("ws").Server;
+const {write} = require('./influxdb');
 
 // Create the https server
 const server = createServer();
@@ -27,8 +28,11 @@ wss2.on("connection", function connection(ws) {
   console.log("wss2:: socket connection ");
   ws.on('message', function message(data) {
       const now = Date.now();
-
       const parseData = JSON.parse(data);
+      
+      //Write the sensor data to influxdb
+      write(parseData.value);
+      
       let message = { date: now, sensorData: parseData.value };
       const jsonMessage = JSON.stringify(message);
       sendMessage(jsonMessage);
