@@ -41,10 +41,6 @@ const SensorChart = () => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log("Data updated!", sensorData);
-  }, [sensorData]);
-
   
   return (
     <div className="p-3 my-auto h-[100vh] w-[100-vw] flex flex-col items-center justify-center bg-white text-black">

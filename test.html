@@ -24,7 +24,7 @@
         // Function to send data to the server
         function sendData() {
             const sensorValue = document.getElementById('sensorValue').value;
-            websocket2.send(JSON.stringify({value: sensorValue}));
+            websocket2.send(JSON.stringify({value: sensorValue, pressure: sensorValue+10}));
         }
     </script>
 </head>
