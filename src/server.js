@@ -1,9 +1,28 @@
 const { createServer } = require("http");
 const { parse } = require("url");
 const WebSocketServer = require("ws").Server;
-const {write} = require('./influxdb');
+const {write, read} = require('./influxdb');
+const express = require("express");
+const cors = require("cors");
 
-// Create the https server
+const app = express();
+
+app.listen(5001);
+
+app.use(cors());
+
+app.get('/getData', async (req, res) => {
+  try {
+    const data = await read();
+    //console.log(data);
+    return res.status(200).json(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return res.status(500).json({'Error':'Error fetching data'});
+  }
+});
+
+// Create the http server
 const server = createServer();
 // Create two instance of the websocket server
 const wss1 = new WebSocketServer({ noServer: true });
@@ -27,13 +46,15 @@ wss1.on("connection", function connection(socket) {
 wss2.on("connection", function connection(ws) {
   console.log("wss2:: socket connection ");
   ws.on('message', function message(data) {
-      const now = Date.now();
+      const now = new Date();
       const parseData = JSON.parse(data);
+      console.log(`Received sensor data: ${parseData.value1} ${parseData.value2}`);
       
       //Write the sensor data to influxdb
-      write(parseData.value);
+      write(parseData.value1,parseData.value2,now);
       
-      let message = { date: now, sensorData: parseData.value };
+      //let message = {date: now, sensorData: parseData.value1, sensorData2: parseData.value2, sensorData3: parseData.value3, sensorData4: parseData.value4, sensorData5: parseData.value5, sensorData6: parseData.value6};
+      let message = {date: now, sensorData: parseData.value1, sensorData2: parseData.value2};
       const jsonMessage = JSON.stringify(message);
       sendMessage(jsonMessage);
   });
