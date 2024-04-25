@@ -25,14 +25,19 @@
         function sendData() {
             const sensorValue = document.getElementById('sensorValue').value;
             const sensor2 = document.getElementById('sensorValue2').value;
-            websocket2.send(JSON.stringify({value1: sensorValue, value2: sensor2}));
+            const sensor3 = document.getElementById('sensorValue3').value;
+            const sensor4 = sensorValue + 1;
+            const sensor5 = sensor2 + 1;
+            const sensor6 = sensor3 + 1;
+            websocket2.send(JSON.stringify({value1: sensorValue, value2: sensor2, value3: sensor3, value4: sensor4, value5: sensor5, value6: sensor6}));
         }
     </script>
 </head>
 <body>
     <h2>Test WebSocket </h2>
-    <input id="sensorValue" type="text" placeholder="Acc data here">
-    <input id="sensorValue2" type="text" placeholder="Rot sensor data here">
+    <input id="sensorValue" type="text" placeholder="Acc X">
+    <input id="sensorValue2" type="text" placeholder="Acc Y">
+    <input id="sensorValue3" type="text" placeholder="Acc Z">
     <button onClick="sendData()">Send Data</button>
 </body>
 </html>
