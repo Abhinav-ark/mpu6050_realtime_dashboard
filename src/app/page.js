@@ -6,6 +6,11 @@ import Button from '@mui/material/Button';
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link.js";
 
+const buttonStyle = {
+  color: 'white',
+  backgroundColor: 'black',
+};
+
 const SensorChart = () => {
   const ws = useRef();
   const [sensorData1, setSensorData1] = useState([0]);
@@ -23,15 +28,21 @@ const SensorChart = () => {
 
     ws.current.onmessage = (ev) => {
       const message = JSON.parse(ev.data);
-      //console.log(`Received message :: ${message.sensorData1} ${message.sensorData2} ${message.date}`);
+
+      //rotation data
       setSensorData1((prevArray) => limitData(prevArray, message.sensorData1));
       setSensorData2((prevArray) => limitData(prevArray, message.sensorData2));
       setSensorData3((prevArray) => limitData(prevArray, message.sensorData3));
+      
+      //acceleration data
       setSensorData4((prevArray) => limitData(prevArray, message.sensorData4));
       setSensorData5((prevArray) => limitData(prevArray, message.sensorData5));
       setSensorData6((prevArray) => limitData(prevArray, message.sensorData6));
+
+      //time data
       setTime((prevArray) => limitData(prevArray, new Date(message.date)));
     };
+
     ws.current.onclose = (ev) => {
       console.log("Client socket close!");
     };
@@ -59,18 +70,18 @@ const SensorChart = () => {
     <div className="relative p-3 my-auto  flex flex-col items-center justify-center bg-white text-black">
       <div className="absolute top-2 flex flex-col items-center ">
         <div className="flex flew-row justify-center items-center mt-8 mb-2">
-          <h1 className="text-xl font-bold text-center md:text-4xl drop-shadow-xl">Real time IOT Sensor Data Using Websockets</h1>
+          <h1 className="text-xl font-bold text-center md:text-4xl drop-shadow-xl">Real time MPU6050 Sensor Data</h1>
         </div>
-        <div className="justify-center items-center"> 
+        <div className="justify-center items-center mt-5"> 
           <Link href="./viewAll">
-          <Button variant="contained" endIcon={<SendIcon />} >
+          <Button variant="contained" style={buttonStyle} endIcon={<SendIcon />} >
             All Data
           </Button>
           </Link>
         </div> 
       </div>
       <div className="flex justify-center items-center h-[100vh] w-[100-vw]">
-        <div className="flex flex-wrap flew-row  items-center justify-center">
+        <div className="flex flex-wrap flew-row  items-center justify-center pt-20">
           <div>
             <Card val={sensorData1.slice(-1)} type={'Rot.X'} bg={'bg-blue-100'} text={'text-[#1F51FF]'}/>
             <Card val={sensorData2.slice(-1)} type={'Rot.Y'} bg={'bg-red-100'} text={'text-[#e60909]'}/>

@@ -1,17 +1,29 @@
 "use client";
 import { LineChart } from "@mui/x-charts";
-import SendIcon from '@mui/icons-material/Send';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import Button from '@mui/material/Button';
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+
+const buttonStyle = {
+  color: 'white',
+  backgroundColor: 'black',
+};
 
 const SensorChart = () => {
   const ws = useRef();
+  
+  //rotation data
   const [sensorData1, setSensorData1] = useState([]);
   const [sensorData2, setSensorData2] = useState([]);
   const [sensorData3, setSensorData3] = useState([]);
+  
+  //acceleration data
   const [sensorData4, setSensorData4] = useState([]);
   const [sensorData5, setSensorData5] = useState([]);
   const [sensorData6, setSensorData6] = useState([]);
+  
+  //time data
   const [time, setTime] = useState([]);
 
   const organizeData = (data) => {
@@ -120,12 +132,20 @@ const SensorChart = () => {
   
   return (
     <div className="p-3 my-auto  flex flex-col items-center justify-center bg-white text-black">
-      <div className="flex flew-row justify-center items-center my-8">
-        <h1 className="text-xl font-bold text-center md:text-4xl drop-shadow-xl">Real time IOT Sensor Data Using Websockets</h1>
-        
+      <div className="absolute top-2 flex flex-col items-center ">
+        <div className="flex flew-row justify-center items-center mt-8 mb-2">
+          <h1 className="text-xl font-bold text-center md:text-4xl drop-shadow-xl">All time MPU6050 Sensor Data</h1>
+        </div>
+        <div className="justify-center items-center mt-5"> 
+          <Link href="./">
+          <Button variant="contained" style={buttonStyle} endIcon={<AccessTimeIcon/>} >
+            Real Time
+          </Button>
+          </Link>
+        </div> 
       </div>
       <div className="flex justify-center items-center h-[100vh] w-[100-vw]">
-        <div className="flex flex-wrap flew-row  items-center justify-center">
+        <div className="flex flex-wrap flew-row pt-20 items-center justify-center">
           <div className="md:h-[500px] md:w-[770px] h-96 w-96  items-center justify-center">
           <LineChart
             xAxis={[
