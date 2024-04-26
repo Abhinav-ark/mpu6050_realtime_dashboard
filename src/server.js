@@ -14,7 +14,6 @@ app.use(cors());
 app.get('/getData', async (req, res) => {
   try {
     const data = await read();
-    //console.log(data);
     return res.status(200).json(data);
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -22,8 +21,10 @@ app.get('/getData', async (req, res) => {
   }
 });
 
+
 // Create the http server
 const server = createServer();
+
 // Create two instance of the websocket server
 const wss1 = new WebSocketServer({ noServer: true });
 const wss2 = new WebSocketServer({ noServer: true });
@@ -31,7 +32,8 @@ const wss2 = new WebSocketServer({ noServer: true });
 // Take note of client or users connected
 const users = new Set();
 
-/*For the first connection "/request" path save clients that initiated connection in our list */
+
+// For the first connection "/request" path save clients that initiated connection in our list 
 wss1.on("connection", function connection(socket) {
   console.log("wss1:: User connected");
   const userRef = {
@@ -42,19 +44,18 @@ wss1.on("connection", function connection(socket) {
   users.add(userRef);
 });
 
-/* For the second connection "/sendSensorData" we listen for sensor reads from the ESP32 board. Upon receiving the sensor read, we broadcast it to all the client listener */
+// For the second connection "/sendSensorData" we listen for sensor reads from the ESP32 board. Upon receiving the sensor read, we broadcast it to all the client listener 
 wss2.on("connection", function connection(ws) {
   console.log("wss2:: socket connection ");
   ws.on('message', function message(data) {
       const now = new Date();
       const parseData = JSON.parse(data);
-      console.log(`Received sensor data: ${parseData.value1} ${parseData.value2}`);
       
       //Write the sensor data to influxdb
-      write(parseData.value1,parseData.value2,now);
+      write(parseData.value1,parseData.value2,parseData.value3,parseData.value4,parseData.value5,parseData.value6,now);
       
-      //let message = {date: now, sensorData: parseData.value1, sensorData2: parseData.value2, sensorData3: parseData.value3, sensorData4: parseData.value4, sensorData5: parseData.value5, sensorData6: parseData.value6};
-      let message = {date: now, sensorData: parseData.value1, sensorData2: parseData.value2};
+      //Broadcast the sensor data to all the clients
+      let message = {date: now, sensorData1: parseData.value1, sensorData2: parseData.value2, sensorData3: parseData.value3, sensorData4: parseData.value4, sensorData5: parseData.value5, sensorData6: parseData.value6};
       const jsonMessage = JSON.stringify(message);
       sendMessage(jsonMessage);
   });
@@ -82,12 +83,13 @@ server.on("upgrade", function upgrade(request, socket, head) {
   }
 });
 
+
 //Open the server port in 5000
 server.listen(5000);
 
+
 //function to send websocket messages to user
 const sendMessage = (message) => {
-  // console.log("message: ",message);
   for (const user of users) {
     user.socket.send(message);
   }
