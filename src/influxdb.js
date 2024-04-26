@@ -20,12 +20,12 @@ const write = (value1,value2,value3,value4,value5,value6,now) => {
     const point1 = new Point(dataType)
     .tag('sensor_id', sensorId)
     .timestamp(now)
-    .floatField('AccX', parseFloat(value1))
-    .floatField('AccY', parseFloat(value2))
-    .floatField('AccZ', parseFloat(value3))
-    .floatField('RotX', parseFloat(value4))
-    .floatField('RotY', parseFloat(value5))
-    .floatField('RotZ', parseFloat(value6));
+    .floatField('AccX', parseFloat(value4))
+    .floatField('AccY', parseFloat(value5))
+    .floatField('AccZ', parseFloat(value6))
+    .floatField('RotX', parseFloat(value1))
+    .floatField('RotY', parseFloat(value2))
+    .floatField('RotZ', parseFloat(value3));
     
     //console.log(`${point1}`)
 
