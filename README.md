@@ -25,3 +25,7 @@ This is a real time Dashboard for Graphical representation of real time Accelera
 
 ## All Time Data
 <img src="./Assets/allTime.png" align="center"></img>
+
+<br>
+
+<h2 align="center"> How to setup ? </h2>
