@@ -29,3 +29,19 @@ This is a real time Dashboard for Graphical representation of real time Accelera
 <br>
 
 <h2 align="center"> How to setup ? </h2>
+
+- Install All the libraries in Arduino IDE
+  - [ArduinoWebockets](https://github.com/gilmaimon/ArduinoWebsockets)
+  - [Adafruit_MPU6050](https://github.com/adafruit/Adafruit_MPU6050)
+  - [WiFi](https://www.arduino.cc/reference/en/libraries/wifi/)
+  - [Wire](https://www.arduino.cc/reference/en/language/functions/communication/wire/)
+- Enter the Wifi Network SSID, PASSWORD, IP Address of the Server Computer in which your Backend is Running in The `mpu6050.ino` Arduino File and Upload the code to the board.
+
+> [!IMPORTANT]  
+> It is necessary that both the `ESP32 Microcontroller` and the backend server are connected to the same WiFi Network for the Code to work.
+
+- In the Server Computer, make sure you have [`nodeJS`](https://nodejs.org/en/download) installed.
+
+```bash
+
+```
