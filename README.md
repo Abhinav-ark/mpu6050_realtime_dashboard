@@ -16,7 +16,7 @@ This is a real time Dashboard for Graphical representation of real time Accelera
 
 <br>
 
-<h2 align="center"> UI Screens </h2>
+<h1 align="center"> UI Screens </h1>
 
 ## Real Time Data (Last 20 Readings)
 <img src="./Assets/realTime.png" align="center"></img>
@@ -28,8 +28,9 @@ This is a real time Dashboard for Graphical representation of real time Accelera
 
 <br>
 
-<h2 align="center"> How to setup ? </h2>
+<h1 align="center"> How to setup ? </h1>
 
+## Arduino
 - Connect the MPU6050 Sensor to the `ESP32 Microcontroller` and connect the Microcontroller to your computer through a USB Cable.
 
 <br>
@@ -57,9 +58,15 @@ This is a real time Dashboard for Graphical representation of real time Accelera
 > [!IMPORTANT]  
 > It is necessary that both the `ESP32 Microcontroller` and the backend server are connected to the same WiFi Network for the Code to work.
 
-- Install [`InfluxDB`](https://www.influxdata.com/downloads/) on your Server Computer, you can use the cloud version also instead.
+<br>
+
+## Influx DB
+- Install [`InfluxDB`](https://www.influxdata.com/downloads/) on your Server Computer (OR) you can use the cloud version also instead.
 - Create a user, organisation of your choice and a Bucket named `IOT`.
 
+<br>
+
+## NodeJS
 - In the Server Computer, make sure you have [`nodeJS`](https://nodejs.org/en/download) installed.
 - Goto the backend folder and type the following commands to install the dependencies.
 ```bash
