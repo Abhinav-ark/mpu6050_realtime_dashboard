@@ -36,9 +36,13 @@ This is a real time Dashboard for Graphical representation of real time Accelera
 <br>
 
 <div align="center">
+    <b>Circuit Diagram</b> (Image Courtesy: ElectronicWings.com)
+    <br>
     <img src="./Assets/circuit.webp" width="500px"/>
     <br>
-    Image Courtesy ElectronicWings.com
+    <b>DOIT ESP32 DevKit</b>
+    <br>
+    <img src="./Assets/Board.jpg" width="800px"/>
 </div>
 
 <br>
