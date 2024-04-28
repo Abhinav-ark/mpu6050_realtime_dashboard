@@ -3,9 +3,9 @@
 #include <WiFi.h>
 #include <ArduinoWebsockets.h>
 
-const char* ssid = "R1";
-const char* password = "rpi12345";
-const char* webSocketServerAddress = "ws://192.168.47.29:5000/sendSensorData";
+const char* ssid = "<ENTER_NETWORK_SSID_HERE>";
+const char* password = "<ENTER_NETWORK_PASSWORD_HERE>";
+const char* webSocketServerAddress = "ws://<ENTER_IP_HERE>:5000/sendSensorData";
 
 using namespace websockets;
 WebsocketsClient webSocket;
