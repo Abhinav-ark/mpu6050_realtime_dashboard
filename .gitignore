@@ -1,41 +1,41 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
+/backend/node_modules
+/backend/.pnp
+/backend/.pnp.js
+/backend/.yarn/install-state.gz
 
 # environmental variables
-.env
-.env.local
+/backend/.env
+/backend/.env.local
 
 # testing
-/coverage
+/backend/coverage
 
 # next.js
-/.next/
-/out/
+/backend/.next/
+/backend/out/
 
 # production
-/build
+/backend/build
 
 # misc
-.DS_Store
-*.pem
-/src/app/table.js
+/backend/.DS_Store
+/backend/*.pem
+/backend/src/app/table.js
 
 # debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+/backend/npm-debug.log*
+/backend/yarn-debug.log*
+/backend/yarn-error.log*
 
 # local env files
-.env*.local
+/backend/.env*.local
 
 # vercel
-.vercel
+/backend/.vercel
 
 # typescript
-*.tsbuildinfo
-next-env.d.ts
+/backend/*.tsbuildinfo
+/backend/next-env.d.ts
