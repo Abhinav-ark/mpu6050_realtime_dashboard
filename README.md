@@ -80,7 +80,7 @@ https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/318579
 ```bash
 > npm install
 ```
-- Goto the .env file to enter your Environmental Variables, i.e, `INFLUX DB API TOKEN`, `INFLUX DB URL` and `INFLUX DB ORGANISATION`.
+- Goto the .env file to enter your Environmental Variables, i.e, `INFLUXDB API TOKEN`, `INFLUXDB URL` and `INFLUXDB ORGANISATION`.
 
 <div align="center">
     <img src="./Assets/env.png" width="500px"/>
