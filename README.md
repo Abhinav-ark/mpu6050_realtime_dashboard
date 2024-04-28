@@ -28,6 +28,11 @@ This is a real time Dashboard for Graphical representation of real time Accelera
 
 <br>
 
+## Video Demo
+https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/3185790a-775a-461d-84f0-339fe4695947
+
+<br>
+
 <h1 align="center"> How to setup ? </h1>
 
 ## Arduino
