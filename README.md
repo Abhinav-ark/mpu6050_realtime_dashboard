@@ -14,7 +14,6 @@ This is a real time Dashboard for Graphical representation of real time Accelera
 - [x] `Express`
 - [x] `MUI React`
 
-<br>
 
 <h1 align="center"> UI Screens </h1>
 
