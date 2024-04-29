@@ -9,7 +9,7 @@
 
 <h1 align="center">Real Time Dashboard for MPU6050 Accelerometer/Gyroscope</h1>
 
-This is a web based dashboard for graphical representation of real-time acceleration and rotation data from MPU6050 using websockets. It also records and stores time series sensor data using InfluxDB.
+This is a web based dashboard for graphical representation of real-time acceleration and rotation data from MPU6050 using websockets. It also records and stores time series sensor data using InfluxDB. Done as a part of `19CSE446 Internet of Things Course`, Department of Computer Science and Engineering, Amrita Vishwa Vidyapeetham, Coimbatore.
 
 ## Technologies Used
 - [x] `Arduino ESP32`
