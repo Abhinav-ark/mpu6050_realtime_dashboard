@@ -43,6 +43,8 @@ https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/318579
 
 <h1 align="center"> How to setup ? </h1>
 
+- Either clone the repository (or) download the Source Code from the [latest release](https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/releases/tag/v1.0.0).
+
 ## Arduino
 - Connect the MPU6050 Sensor to the `ESP32 Microcontroller` and connect the Microcontroller to your computer through a USB Cable.
 
