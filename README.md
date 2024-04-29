@@ -36,7 +36,7 @@ This is a web dashboard for graphical representation of real-time acceleration a
 
 <br>
 
-## Video Demo
+## Video Demonstration
 https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/3185790a-775a-461d-84f0-339fe4695947
 
 <br>
@@ -103,6 +103,10 @@ https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/318579
 > npm run dev
 ```
 - You can test the websockets server by using the `./TestWebsockets/test.html` document.
+
+## Explainatory Demonstration
+
+https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/1300083d-66cc-492d-bfb2-79a4cba5d1e1
 
 # Contributing
 Refer to The [Code of Conduct](https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/blob/main/CODE_OF_CONDUCT.md) before making a pull request to the repository, posting on the discussions section or involing in any public activity related to this repository.
