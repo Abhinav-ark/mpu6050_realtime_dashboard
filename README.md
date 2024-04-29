@@ -102,3 +102,12 @@ https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/318579
 > npm run dev
 ```
 - You can test the websockets server by using the `./TestWebsockets/test.html` document.
+
+# Contributing
+Refer to The [Code of Conduct](https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/blob/main/CODE_OF_CONDUCT.md) before making a pull request to the repository, posting on the discussions section or involing in any public activity related to this repository.
+
+# Licensing
+All code in this repository is Licensed Under `MIT License`, and is freely available for anyone to use or make changes.
+
+# Security Policy
+Refer [SECURITY.md](https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/blob/main/SECURITY.md) for Security Policy.
