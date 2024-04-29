@@ -1,3 +1,12 @@
+<div align="center" style="display:flex; align-items: center; justify: center; text-decoration: none ">
+    <a href="https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/blob/main/LICENSE" target="_blank" rel="noreferrer">
+      <img align='center' src="https://img.shields.io/badge/LICENSE-MIT-green"/>
+    </a>
+    <a href="https://github.com/Abhinav-ark/mpu6050_realtime_dashboard" target="_blank" rel="noreferrer">
+      <img align='center' src="https://img.shields.io/github/created-at/Abhinav-ark/mpu6050_realtime_dashboard"/>
+    </a>  
+</div>
+
 <h1 align="center">Real Time Dashboard for MPU6050 Accelerometer/Gyroscope</h1>
 
 This is a real time Dashboard for Graphical representation of real time Acceleration and Rotation data from MPU6050 using websockets and also recorder Time series sensor data using InfluxDB.
