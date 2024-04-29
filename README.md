@@ -52,7 +52,7 @@ https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/318579
 <br>
 <br>
 
-- Install All the libraries in Arduino IDE
+- Install All the necessary libraries in Arduino IDE
   - [ArduinoWebockets](https://github.com/gilmaimon/ArduinoWebsockets)
   - [Adafruit_MPU6050](https://github.com/adafruit/Adafruit_MPU6050)
   - [WiFi](https://www.arduino.cc/reference/en/libraries/wifi/)
@@ -63,6 +63,8 @@ https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/318579
     <img src="./Assets/WiFi.png" width="700px"/>
 </div>
 
+<br>
+    
 > [!IMPORTANT]  
 > It is necessary that both the `ESP32 Microcontroller` and the backend server are connected to the same WiFi Network for the Code to work.
 
