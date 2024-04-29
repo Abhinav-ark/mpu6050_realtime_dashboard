@@ -114,7 +114,7 @@ https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/318579
 ```
 - You can test the websockets server by using the `./TestWebsockets/test.html` document.
 
-## Explainatory Demonstration
+## Explanatory Demonstration
 > [!NOTE]
 > Enable Audio 🔊 for Audio Explanation.
 
