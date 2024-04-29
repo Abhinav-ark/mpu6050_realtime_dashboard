@@ -61,7 +61,7 @@ https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/318579
 <br>
 <br>
 
-- Install All the necessary libraries in Arduino IDE
+- Install all the necessary libraries in Arduino IDE
   - [ArduinoWebockets](https://github.com/gilmaimon/ArduinoWebsockets)
   - [Adafruit_MPU6050](https://github.com/adafruit/Adafruit_MPU6050)
   - [WiFi](https://www.arduino.cc/reference/en/libraries/wifi/)
@@ -82,6 +82,7 @@ https://github.com/Abhinav-ark/mpu6050_realtime_dashboard/assets/76396917/318579
 ## Influx DB
 - Install [`InfluxDB`](https://www.influxdata.com/downloads/) on your Server Computer (OR) you can use the cloud version also instead.
 - Create a user, organisation of your choice and a Bucket named `IOT`.
+- Create an API Access Token with Read and Write Permissions to IOT bucket.
 
 <br>
 
